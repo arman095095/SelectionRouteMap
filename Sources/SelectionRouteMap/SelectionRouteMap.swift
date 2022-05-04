@@ -24,14 +24,14 @@ public protocol SelectionModuleOutput: AnyObject {
 
 public typealias SelectionModule = Module<SelectionModuleInput, SelectionModuleOutput>
 
-typealias SelectionPageModule = Module<SelectionPageModuleInput, SelectionPageModuleOutput>
+public typealias SelectionPageModule = Module<SelectionPageModuleInput, SelectionPageModuleOutput>
 
-protocol SelectionPageModuleOutput: AnyObject {
+public protocol SelectionPageModuleOutput: AnyObject {
     func itemSelected(item: String) -> SelectionPageModelProtocol?
     func selectionCanceled()
 }
 
-protocol SelectionPageModuleInput: AnyObject { }
+public protocol SelectionPageModuleInput: AnyObject { }
 
 public protocol SelectionModuleProtocol {
     func rootModule(model: SelectionModelProtocol) -> SelectionModule

@@ -3,16 +3,9 @@
 
 import PackageDescription
 
-private let remoteDependencies: [Package.Dependency] = [
+private let dependencies: [Package.Dependency] = [
     .package(url: "https://github.com/arman095095/Module.git", branch: "develop"),
 ]
-
-private let localDependencies: [Package.Dependency] = [
-    .package(path: "/Users/armancarhcan/Desktop/Workdir/Module"),
-]
-
-let isDev = true
-private let dependencie = isDev ? localDependencies : remoteDependencies
 
 let package = Package(
     name: "SelectionRouteMap",
@@ -22,7 +15,7 @@ let package = Package(
             name: "SelectionRouteMap",
             targets: ["SelectionRouteMap"]),
     ],
-    dependencies: dependencie,
+    dependencies: dependencies,
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
